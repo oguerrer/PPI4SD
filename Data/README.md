@@ -25,6 +25,16 @@ The national level data covers the period 2005-2017, with each year being a colu
 | .552 | ... | .671 | 17 | 17.2 | UN | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
 | .043 | ... | .236 | 5 | NA | GCI | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
+Besides the columns representing the years of the observations, there are aditional attributes that we explain bellow:
+
+* `goal`: the SDG to which the indicator belongs (1 to 18)
+* `target`: the target to which the indicator belings within its SDG. Targets are only defined for data obtained from the UN and the WDI since their indicators have been classified accordingly.
+* `source`: the database from which the indicators were obtained (UN, WDI, WBP, WGI, GCI or OEC).
+* `countryCode`: the 3-digit ISO code of the relevant country.
+* `seriesCode`: The code of the indicator as it appears in its original database. This information can be used in the original documentation of the source.
+* `seriesName`: The full description of the indicator, as provided by the original data.
+* `instrumental`: A binary variable indicating whether we consider that the topic of the indicator is *instrumental*, *i.e.* that is has specific policy instruments and dedicated resources (see technical report for more details).
+* `reverse`: A binary variable saying if the indicator needs to be reversed so that a higher value represents a better outcome. In the normalized data, all the indicators that required reversion have been reversed. In the raw data this is not the case.
 
 
 
