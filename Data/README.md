@@ -18,11 +18,14 @@ National level data consists of development indicators for the entire country of
 Most of the data comes from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases, and classified them into the SDGs.
 
 ## Data Structure
-The national level data covers the period 2005-2017. 
+The national level data covers the period 2005-2017. It is in the 
 
 | 2005 | ... | 2017 | goal | target | source | countryCode | seriesCode | seriesName | instrumental | reverse |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | .552 | ... | .671 | 17 | 17.2 | UN | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
 | .043 | ... | .236 | 5 | NA | GCI | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
+
+
+
 
 
