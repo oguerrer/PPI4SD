@@ -8,12 +8,12 @@ It should be noted that we have created an additional SDG (number 18) to separat
 ## National Level Data
 National level data consists of development indicators for the entire country of Mexico, and they have been obtained from the following sources:
 
-* [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/)
-* [World Bank Sustainable Development Goals Database](http://datatopics.worldbank.org/sdgs/)
-* [World Bank Povery and Equity Indicators](http://povertydata.worldbank.org/poverty/home/)
-* [Worldwide Governance Indicators](https://datacatalog.worldbank.org/dataset/worldwide-governance-indicators)
-* [Global Competitiveness Report Indicators](https://knoema.com/atlas/sources/WEF)
-* [Observatory of Economic Complexity](https://atlas.media.mit.edu/en/)
+* [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/) (UN)
+* [World Bank Sustainable Development Goals Database](http://datatopics.worldbank.org/sdgs/) (WDI)
+* [World Bank Povery and Equity Indicators](http://povertydata.worldbank.org/poverty/home/) (WBP)
+* [Worldwide Governance Indicators](https://datacatalog.worldbank.org/dataset/worldwide-governance-indicators) (WGI)
+* [Global Competitiveness Report Indicators](https://knoema.com/atlas/sources/WEF) (GCI)
+* [Observatory of Economic Complexity](https://atlas.media.mit.edu/en/) (OEC)
 
 Most of the data comes from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases, and classified them into the SDGs.
 
@@ -22,6 +22,7 @@ The national level data covers the period 2005-2017.
 
 | 2005 | ... | 2017 | goal | target | source | countryCode | seriesCode | seriesName | instrumental | reverse |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| .55 | ... | .67 | 17 | 17.2 | UN | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
+| .552 | ... | .671 | 17 | 17.2 | UN | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
+| .043 | ... | .236 | 5 | NA | GCI | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
 
