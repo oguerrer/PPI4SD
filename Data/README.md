@@ -10,7 +10,7 @@ National level data consists of development indicators for the entire country of
 
 * [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/) (UN)
 * [World Bank Sustainable Development Goals Database](http://datatopics.worldbank.org/sdgs/) (WDI)
-* [World Bank Povery and Equity Indicators](http://povertydata.worldbank.org/poverty/home/) (WBP)
+* [World Bank Poverty and Equity Indicators](http://povertydata.worldbank.org/poverty/home/) (WBP)
 * [Worldwide Governance Indicators](https://datacatalog.worldbank.org/dataset/worldwide-governance-indicators) (WGI)
 * [Global Competitiveness Report Indicators](https://knoema.com/atlas/sources/WEF) (GCI)
 * [Observatory of Economic Complexity](https://atlas.media.mit.edu/en/) (OEC)
