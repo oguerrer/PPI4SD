@@ -6,7 +6,7 @@ PPI4SD uses secondary data on development indicators, extracted from various sou
 It should be noted that we have created an additional SDG (number 18) to separate the topic of *peace and justice* from *strong institutions* in SDG 16. Thus, in this project, SDG 16 contains indicators of *peace and justice*, while SDG 18 covers *strong institutions*. This separation is important in the Mexican context, there governance issues may represent challenges that are not necessarily directly related to *peace and justice*.
 
 ## National Level Data
-National level data consists of development indicators for the entire country of Mexico, and they have been obtained from the following sources:
+National level data consist of development indicators for the entire country of Mexico, and they have been obtained from the following sources:
 
 * [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/) (UN)
 * [World Bank Sustainable Development Goals Database](http://datatopics.worldbank.org/sdgs/) (WDI)
