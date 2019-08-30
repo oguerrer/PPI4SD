@@ -44,8 +44,11 @@ To facilitate replicability, we provide the estimated growth factors (see method
 
 The file `alphas.csv` contains a vector with the values of the growth factors. They are ordered in the same fashion as the files `final_sample_normalized.csv` and `final_sample_raw.csv`, so the first factor corresponds to the first indicator. Example 1 provides a tutorial on how to load and visualiza these data.
 
-## Development Goals from Official Documents
-As explained in the methodological report, the development goals in a retrospective analysis are the final values of the development indicators. In a prospective analysis, the goals can be hypothetical values or data obtained from different sources. One such source are the indicators of other countries. We provide these data for the OECD members, which is used in the technical report to evaluate Mexico's policy coherence. File `goals_oecd.csv` contains each OECD country in a column, and provides the value of the indicator employed as goal in each row. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`. Here we provide an example of these data:
+## Development Goals
+As explained in the methodological report, the development goals in a retrospective analysis are the final values of the development indicators. In a prospective analysis, the goals can be hypothetical values or data obtained from different sources. 
+
+### Goals from the OECD Members
+One way to think about development goals is in terms of a country emulating another. In terms of indicators, this would mean that a country could establish a set of goals based on the indicators of another country it wishes to emulate. In the technical report, we perform this excercise with the indicators of OECD members. File `goals_oecd.csv` contains each OECD country in a column, and provides the value of the indicator employed as goal in each row. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`. Here we provide an example of these data:
 
 | seriesCode | AUS_ini | AUT_ini | ... | GBR_fin | USA_fin |
 | --- | --- | --- | --- | --- | --- |
@@ -54,7 +57,8 @@ As explained in the methodological report, the development goals in a retrospect
 
 These data contains 34 OECD members others than Mexico. When a country's name as the suffix `_ini` it denotes the value of that indicator for that country in the initial period of the sample (2006). In contrast the suffix `_fin` indicates the value in the final period (2016). In addition to the OECD members, we also provide average indicator values (across countries) in the column `OECD_mean` and maximum values (across countries) in `OECD_max`.
 
-An additional source of development goals for Mexico was obtained from the Annex XVIII-Bis of the Mexican Pairlamentary Gazette (2019). This is a document prouduced by the Mexican Treasury, identifying multiple development indicators and establishing specific values as their goals. We provide these data after matching them to the main development indicators as explained in the technical report. File %%% provides a vector with the goal for each indicator. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`.
+### Goals from official Documents
+An additional source of development goals for Mexico was obtained from the Annex XVIII-Bis of the Mexican Pairlamentary Gazette (2019). This is a document prouduced by the Mexican Treasury, identifying multiple development indicators and establishing specific values as their goals. We provide these data after matching them to the main development indicators as explained in the technical report. File `goals_doc.csv` provides a vector with the goal for each indicator. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`.
 
 
 ## SDG Budgeting
