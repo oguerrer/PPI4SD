@@ -2,23 +2,13 @@
 
 PPI4SD uses secondary data on development indicators, extracted from various sources.
 
-### Splitting SDG 16
+## Splitting SDG 16
 It should be noted that we have split SDG 16 in order to differentiate the topics of *peace and justice* and *strong institutions*. Thus, in this project, SDG 16a contains indicators of *peace and justice*, while SDG 16b covers *strong institutions*. This differentiation is important in the Mexican context, there governance issues may represent challenges that are not necessarily directly related to *peace and justice*.
 
 ## Development-Indicator Data
-National level data consist of development indicators for the entire country of Mexico, and they have been obtained from the following sources:
+National level data consist of development indicators collected from various sources. Most of the data come from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases and manually classified them into the SDGs, but not into targets.
 
-* [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/) (UN)
-* [World Bank Sustainable Development Goals Database](http://datatopics.worldbank.org/sdgs/) (WDI)
-* [World Bank Poverty and Equity Indicators](http://povertydata.worldbank.org/poverty/home/) (WBP)
-* [Worldwide Governance Indicators](https://datacatalog.worldbank.org/dataset/worldwide-governance-indicators) (WGI)
-* [Global Competitiveness Report Indicators](https://knoema.com/atlas/sources/WEF) (GCI)
-* [Observatory of Economic Complexity](https://atlas.media.mit.edu/en/) (OEC)
-
-Most of the data comes from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases and classified them into the SDGs.
-
-### Data Structure of National Data
-The national level data covers the period 2005-2017, with each year being a column in a table. We provide two versions of it: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator, obtained from a larger sample of countries and years (see the technical report for more details). The raw version has the original values. Both datasets can be found in the CSV-formatted files: `sample_data_norm.csv` and `sample_data_raw.csv`. The following table provides an example of the structure.
+These data cover the period 2006-2016, with each year coded into a column of a table. We provide two versions of these data: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator (see the technical report for more details on this normalization). The raw version has the original values without normalization. Both datasets can be found in the CSV-formatted files: `final_sample_normalized.csv` and `final_sample_raw.csv`. The following table provides an example of the structure.
 
 | 2005 | ... | 2017 | goal | target | countryCode | seriesCode | seriesName | instrumental | reverse |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
