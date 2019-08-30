@@ -21,7 +21,7 @@ Most of the data comes from the United Nations Global SDG Database, which is the
 The national level data covers the period 2005-2017, with each year being a column in a table. We provide two versions of it: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator, obtained from a larger sample of countries and years (see the technical report for more details). The raw version has the original values. Both datasets can be found in the CSV-formatted files: `sample_data_norm.csv` and `sample_data_raw.csv`. The following table provides an example of the structure.
 
 | 2005 | ... | 2017 | goal | target | countryCode | seriesCode | seriesName | instrumental | reverse |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | .552 | ... | .671 | 17 | 17.2 | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
 | .043 | ... | .236 | 5 | NA | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
