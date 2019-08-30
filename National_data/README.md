@@ -34,6 +34,11 @@ Besides the columns representing the years of the observations, there are aditio
 * `goalColor`: the color of the corresponding SDG in hexagesimal format. A non-official color is asigned to SDG 16b to differentiate it from SDG 16a in the plots.
 * `goalColorOfficial`: the official colors of the corresponding SDG in hexagesimal format.
 
+## Network Data
+The network of interdependencies between development indicators can be estimated by the user through various methods (see Ospina-Forero [2019]%%% for a comprehensive survey). For this project, we employ the `sparsebn` method by %%%cite, which has the `R` package `sparsebn` and can be found at %%%URL. Here, we provide the file of the network that was estimated for this proyect. The file `network.csv` contains a squared matrix where each row and each column represents a development indicator. The rows and columns are ordered in the same fashion as the datasets `final_sample_normalized.csv` and `final_sample_raw.csv`.
+
+It should be noted that this network is not causal. Instead, it captures the conditional dependencies between the different development indicators. The direction of such dependencies goes from row to column. For example, if entry [3, 97] has a positive value, it means that the 3rd indicator conditions the change of the 97th indicator in a positive way. In other words, if we observe a change in the 97th indicator, we should expect that a change in the 3rd indicator took place in the same direction. Positive signs in this matrix represent synergies while negative ones correspond to trade-offs. Example 1 provides a tutorial to load and visualize these data.
+
 
 
 
