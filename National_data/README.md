@@ -1,4 +1,4 @@
-# Data for PPI4SD
+# Datasets
 
 PPI4SD uses secondary data on development indicators, extracted from various sources.
 
@@ -44,7 +44,10 @@ To facilitate replicability, we provide the estimated growth factors (see method
 
 The file `alphas.csv` contains a vector with the values of the growth factors. They are ordered in the same fashion as the files `final_sample_normalized.csv` and `final_sample_raw.csv`, so the first factor corresponds to the first indicator. Example 1 provides a tutorial on how to load and visualiza these data.
 
-## Development Goals
+## Development Goals from Official Documents
+As explained in the methodological report, the development goals in a retrospective analysis are the final values of the development indicators. In a prospective analysis, the goals can be hypothetical values or data obtained from different sources. One such source are the indicators of other countries. We provide these data for the OECD members, which is used in the technical report to evaluate Mexico's policy coherence. File %%% contains each OECD country in a column, and provides the value of the indicator employed as goal in each row. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`.
+
+An additional source of development goals for Mexico was obtained from the Annex XVIII-Bis of the Mexican Pairlamentary Gazette (2019). This is a document prouduced by the Mexican Treasury, identifying multiple development indicators and establishing specific values as their goals. We provide these data after matching them to the main development indicators as explained in the technical report. File %%% provides a vector with the goal for each indicator. The order of the rows corresponds to that of thefiles `final_sample_normalized.csv` and `final_sample_raw.csv`.
 
 
 ## SDG Budgeting
