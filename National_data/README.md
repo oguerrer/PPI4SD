@@ -15,7 +15,7 @@ These data cover the period 2006-2016, with each year coded into a column of a t
 | .552 | ... | .671 | 17 | 17.2 | MEX | 17.4.1_1 | Debt service as a proportion of exports of goods and services (%) | 1 | 1 |
 | .043 | ... | .236 | 5 | NA | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
-Besides the columns representing the years of the observations, there are aditional attributes that we explain bellow:
+Example 1 provides a tutorial on how to load and visualize these data. Besides the columns representing the years of the observations, there are aditional attributes that we explain bellow:
 
 * `goal`: the SDG to which the indicator belongs (1 to 18)
 * `target`: the target to which the indicator belings within its SDG. Targets are only defined for data obtained from the UN and the WDI since their indicators have been classified accordingly.
@@ -40,6 +40,13 @@ The network of interdependencies between development indicators can be estimated
 It should be noted that this network is not causal. Instead, it captures the conditional dependencies between the different development indicators. The direction of such dependencies goes from row to column. For example, if entry [3, 97] has a positive value, it means that the 3rd indicator conditions the change of the 97th indicator in a positive way. In other words, if we observe a change in the 97th indicator, we should expect that a change in the 3rd indicator took place in the same direction. Positive signs in this matrix represent synergies while negative ones correspond to trade-offs. Example 1 provides a tutorial to load and visualize these data.
 
 ## Growth Factors
+To facilitate replicability, we provide the estimated growth factors (see methodological report). Since this estimation can be computationally intensive, we advise directly using the file `alphas.csv` to asign the values of each factor. If estimation is necessary, we also provide the code with the optimization heuristic.
+
+The file `alphas.csv` contains a vector with the values of the growth factors. They are ordered in the same fashion as the files `final_sample_normalized.csv` and `final_sample_raw.csv`, so the first factor corresponds to the first indicator. Example 1 provides a tutorial on how to load and visualiza these data.
+
+
+
+
 
 
 
