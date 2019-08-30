@@ -58,13 +58,13 @@ One way to think about development goals is in terms of a country emulating anot
 These data contains 34 OECD members others than Mexico. When a country's name as the suffix `_ini` it denotes the value of that indicator for that country in the initial period of the sample (2006). In contrast the suffix `_fin` indicates the value in the final period (2016). In addition to the OECD members, we also provide average indicator values (across countries) in the column `OECD_mean` and maximum values (across countries) in `OECD_max`.
 
 ### Goals from official Documents
-An additional source of development goals for Mexico was obtained from the Annex XVIII-Bis of the [Mexican Parliamentary Gazette (2019)](http://gaceta.diputados.gob.mx/PDF/64/2019/abr/20190430-XVIII-1.pdf). This is a document produced by the Mexican Treasury, identifying multiple development indicators and establishing specific values as their goals. We provide these data after matching them to the main development indicators as explained in the technical report. File `goals_doc.csv` provides a vector with the goal for each indicator. The order of the rows corresponds to that of the files `final_sample_normalized.csv` and `final_sample_raw.csv`.
+An additional source of development goals for Mexico was obtained from the Annex XVIII-Bis of the [Mexican Parliamentary Gazette of 2019](http://gaceta.diputados.gob.mx/PDF/64/2019/abr/20190430-XVIII-1.pdf). This is a document produced by the Mexican Treasury, identifying multiple development indicators and establishing specific values as their goals. We provide these data after matching them to the main development indicators as explained in the technical report. File `goals_doc.csv` provides a vector with the goal for each indicator. The order of the rows corresponds to that of the files `final_sample_normalized.csv` and `final_sample_raw.csv`.
 
 ## SDG Budgeting
-
+Budgeting for SDGs is becoming central topic in the movelement of Open Fiscal Data. Mexico leads this movement by linking federal budgetary allocations across the SDGs. Therefore, our technical report presents a study mapping the federal budget into the SDGs, and taking thos allocations as fixed exogenous priorities. Here we provide these data. The file `budget.csv` contains the allocation of resources estimated for each development indicator (see all the details in the technical report). They come in the form of a vector with entries ordered in the same fashion as the files `final_sample_normalized.csv` and `final_sample_raw.csv`.
 
 ## References
 
+[1] Ospina-Forero, Luis and Castañeda Ramos, Gonzalo and Guerrero, Omar A, Estimating Networks of Sustainable Development Goals (May 9, 2019). Available at SSRN: https://ssrn.com/abstract=3385362 or http://dx.doi.org/10.2139/ssrn.3385362 
 
-
-
+[2] Aragam, B., Gu, J., and Zhou, Q. (2017). Learning large-scale Bayesian networks with the sparsebn package. arXiv: 1703.04025.
