@@ -1,11 +1,11 @@
 # Data for PPI4SD
 
-PPI4SD uses secondary data on development indicators, extracted from various sources. The data can be divided into two levels: *national* and *sub-national*. 
+PPI4SD uses secondary data on development indicators, extracted from various sources.
 
-### New SDG 18
-It should be noted that we have created an additional SDG (number 18) to separate the topic of *peace and justice* from *strong institutions* in SDG 16. Thus, in this project, SDG 16 contains indicators of *peace and justice*, while SDG 18 covers *strong institutions*. This separation is important in the Mexican context, there governance issues may represent challenges that are not necessarily directly related to *peace and justice*.
+### Splitting SDG 16
+It should be noted that we have split SDG 16 in order to differentiate the topics of *peace and justice* and *strong institutions*. Thus, in this project, SDG 16a contains indicators of *peace and justice*, while SDG 16b covers *strong institutions*. This differentiation is important in the Mexican context, there governance issues may represent challenges that are not necessarily directly related to *peace and justice*.
 
-## National Level Data
+## The Data
 National level data consist of development indicators for the entire country of Mexico, and they have been obtained from the following sources:
 
 * [United Nations Global SDG Database](https://unstats.un.org/sdgs/indicators/database/) (UN)
@@ -37,6 +37,5 @@ Besides the columns representing the years of the observations, there are aditio
 * `reverse`: A binary variable saying if the indicator needs to be reversed so that a higher value represents a better outcome. In the normalized data, all the indicators that required reversion have been reversed. In the raw data this is not the case.
 
 
-## Sub-national Level Data
 
 
