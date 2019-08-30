@@ -5,8 +5,8 @@ PPI4SD uses secondary data on development indicators, extracted from various sou
 ## Splitting SDG 16
 It should be noted that we have split SDG 16 in order to differentiate the topics of *peace and justice* and *strong institutions*. Thus, in this project, SDG 16a contains indicators of *peace and justice*, while SDG 16b covers *strong institutions*. This differentiation is important in the Mexican context, there governance issues may represent challenges that are not necessarily directly related to *peace and justice*.
 
-## Development-Indicator Data
-National level data consist of development indicators collected from various sources. Most of the data come from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases and manually classified them into the SDGs, but not into targets.
+## Development Indicators
+The national level indicators consist of development indicators collected from various sources. Most of the data come from the United Nations Global SDG Database, which is the official source of the SDGs. However, in many cases, this source is insufficient to cover all the 17 SDGs. For this reason, we have complemented the official source with indicators from other databases and manually classified them into the SDGs, but not into targets.
 
 These data cover the period 2006-2016, with each year coded into a column of a table. We provide two versions of these data: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator (see the technical report for more details on this normalization). The raw version has the original values without normalization. Both datasets can be found in the CSV-formatted files: `final_sample_normalized.csv` and `final_sample_raw.csv`. The following table provides an example of the structure.
 
@@ -34,7 +34,7 @@ Example 1 provides a tutorial on how to load and visualize these data. Besides t
 * `goalColor`: the color of the corresponding SDG in hexagesimal format. A non-official color is asigned to SDG 16b to differentiate it from SDG 16a in the plots.
 * `goalColorOfficial`: the official colors of the corresponding SDG in hexagesimal format.
 
-## Network Data
+## Network
 The network of interdependencies between development indicators can be estimated by the user through various methods. [Ospina-Forero et al. (2019)](http://dx.doi.org/10.2139/ssrn.3385362) provide a comprehensive survey. For this project, we employ the method of Learning Sparse Bayesian Networks from High-Dimensional Data by [Aragam et al. (2017)](https://github.com/itsrainingdata/sparsebn). Here, we provide the file of the network that was estimated for this proyect. The file `network.csv` contains a squared matrix where each row and each column represents a development indicator. The rows and columns are ordered in the same fashion as in the files `final_sample_normalized.csv` and `final_sample_raw.csv`.
 
 It should be noted that this network is not causal. Instead, it captures the conditional dependencies between the different development indicators. The direction of such dependencies goes from row to column. For example, if entry [3, 97] has a positive value, it means that the 3rd indicator conditions the change of the 97th indicator in a positive way. In other words, if we observe a change in the 97th indicator, we should expect that a change in the 3rd indicator took place in the same direction. Positive signs in this matrix represent synergies while negative ones correspond to trade-offs. Example 1 provides a tutorial to load and visualize these data.
@@ -44,7 +44,10 @@ To facilitate replicability, we provide the estimated growth factors (see method
 
 The file `alphas.csv` contains a vector with the values of the growth factors. They are ordered in the same fashion as the files `final_sample_normalized.csv` and `final_sample_raw.csv`, so the first factor corresponds to the first indicator. Example 1 provides a tutorial on how to load and visualiza these data.
 
+## Development Goals
 
+
+## SDG Budgeting
 
 
 
