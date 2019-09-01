@@ -1,6 +1,6 @@
 # Code for PPI
 
-All the necessary functions to run PPI are in the file `ppi.py`, which is written in `Python 3`. We suggest installing the [Anaconda distribution](https://www.anaconda.com/distribution/) of Python. The folder `Examples` contains three examples on how use `ppi.py`. Here, we provide the documentation of its two functions: `run_ppi()` and `get_targets()`.
+All the necessary functions to run PPI are in the file `ppi.py`, which is written in `Python 3`. We suggest installing the [Anaconda distribution](https://www.anaconda.com/distribution/) of Python. The folder `Examples` contains three examples on how to use `ppi.py`. Here, we provide the documentation of its two functions: `run_ppi()` and `get_targets()`.
 
 
 
