@@ -1,45 +1,11 @@
-# ppi
-Policy Priority Inference for Sustainable Development
+# Code for PPI
 
-Authors: Omar A. Guerrero & Gonzalo Castañeda
-Written in Pyhton 3.7
-Acknowledgments: This product was developed through the sponsorship of the
-    United Nations Development Programme (bureau for Latin America)
-    and with the support of the National Laboratory for Public Policies (Mexico City),
-    the Centro de Investigación y Docencia Económica (CIDE, Mexico City),
-    and The Alan Turing Institute (London).
-
-This file contains all the necesary functions to reproduce the analysis presented
-in the methodological and technical reports. The accompanying data can be
-obtained from the public repository: https://github.com/oguerrer/PPI4SD.
-There are two functions in this script:
-
-    run_ppi : the main function that simulates the policymaking process and
-    generates synthetic development-indicator data.
-    get_targets : a support function to transform a collection of series
-    where one or more targets are less or equals to the initial value of the series.
-
-Further information can be found in each function's code.
-
-
-Example
--------
-To run PPI in a Python script, just add the following line:
-
-    tsI, tsC, tsF, tsP, tsD, tsS, ticks, H = run_ppi(I0, T)
-
-This will simulate the policymaking process for initial values I0 and targets T.
-This example assumes no network of spillovers. All other arguments can be
-passed as explained in the function run_ppi.
-
-
-Rquired external libraries
---------------------------
-- Numpy
+All the necessary functions to run PPI are in the file `ppi.py`, which is written in `Python 3`. We suggest installing the [Anaconda distribution](https://www.anaconda.com/distribution/) of Python. The folder `Examples` contains three examples on how use `ppi.py`. Here, we provide the documentation of its two functions: `run_ppi()` and `get_targets()`.
 
 
 
-## run_ppi
+
+## run_ppi()
 ```python
 run_ppi(I0, T, A=None, alpha=0.1, phi=0.5, tau=0.5, R=None, gov_func=None, P0=None, H0=None, PF=None, pf=1, tolerance=0.001)
 ```
@@ -112,7 +78,8 @@ Returns
     H: numpy array
         A vector with historical inefficiencies,
 
-## get_targets
+
+## get_targets()
 ```python
 get_targets(series)
 ```
