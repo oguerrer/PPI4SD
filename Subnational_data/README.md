@@ -37,14 +37,13 @@ We provide two versions of these data: *normalized* and *raw*. In the normalized
 | .043 | ... | .236 | 5 | NA | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
 
-| 2006 | ... | 2016 |
-| --- | --- | --- |
-| A | B | C |
 
 
-2006|...|2016|2017|2018|goal|target|source|countryCode|seriesCode|seriesName|instrumental|reverse|
- --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- |
-|13.03||11.26|1|1.1|CONEVAL|CHP|3|Porcentaje de poblacion vulnerable por ingresos||
+| 2006 | ... | 2016 | 2017 | 2018 | goal | target | source | countryCode | seriesCode | seriesName | instrumental | reverse |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| | 13.03 | | 11.26 | 1 | 1.1 | CONEVAL | CHP | 3 | Porcentaje de poblacion vulnerable por ingresos | |
+
+ 
 |6.79||7.76|1|1.1|CONEVAL|CMX|3|Porcentaje de poblacion vulnerable por ingresos||
 |82.40 | ... ||107.60|||16.1|16.1|ENVIPE|AGU|185|Tasa de robo a negocio||
 |105.86|182.22|||16.1|16.1|ENVIPE|BCN|185|Tasa de robo a negocio||
