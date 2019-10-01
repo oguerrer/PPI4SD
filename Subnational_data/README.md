@@ -39,7 +39,7 @@ We provide two versions of these data: *normalized* and *raw*. In the normalized
 |82.40 | ...|107.60|||16.1|16.1|ENVIPE|AGU|185|Tasa de robo a negocio|1|1|
 |105.86|...|182.22|||16.1|16.1|ENVIPE|BCN|185|Tasa de robo a negocio|1|1|
 
-Besides the columns representing the years of the observations, there are additional attributes that we explain below:
+Note that missing values should be left empty in the csv file. Besides the columns representing the years of the observations, there are additional attributes that we explain below:
 
 * `goal`: the SDG to which the indicator belongs 
 * `target`: the target to which the indicator belongs within its SDG. 
@@ -49,6 +49,7 @@ Besides the columns representing the years of the observations, there are additi
 * `seriesName`: the description of the indicator as provided by the original data.
 * `instrumental`: a binary variable indicating whether we consider that the topic of the indicator is *instrumental*, *i.e.* that is has specific policy instruments and dedicated resources (see technical report for more details).
 * `reverse`: a binary variable saying if the indicator needs to be reversed so that a higher value represents a better outcome. In the normalized data, all the indicators that required reversion have been reversed. In the raw data this is not the case.
+
 
 ## Network
 
