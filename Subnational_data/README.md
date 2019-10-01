@@ -37,8 +37,8 @@ We provide two versions of these data: *normalized* and *raw*. In the normalized
 | .043 | ... | .236 | 5 | NA | MEX | EOSQ088 | Ease of access to loans | 1 | 1 |
 
 
-2006 | ... | 2016|
-A | B | C |
+|2006 | ... | 2016|
+|A | B | C |
 
 
 2006|...|2016|2017|2018|goal|target|source|countryCode|seriesCode|seriesName|instrumental|reverse|
