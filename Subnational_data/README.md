@@ -1,6 +1,6 @@
 # Subnational Data
 
-These data were constructed by the [National Laboratory of Public Policy (LNPP)]{https://www.lnpp.mx) using state level secondary data from various sources . The data includes the period from 2005 to 2018, although most series stop in 2016. 
+These data were constructed by the [National Laboratory of Public Policy (LNPP)](https://www.lnpp.mx) using state level secondary data from various sources . The data includes the period from 2005 to 2018, although most series stop in 2016. 
 
 
 ## Adjustments to official SDG
