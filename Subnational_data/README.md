@@ -31,6 +31,10 @@ These data cover the period 2006-2018, with each year coded into a column in a t
 
 We provide two versions of these data: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator (see the technical report for more details on this normalization). The raw version has the original values without normalization. Both datasets can be found in the CSV-formatted files: `dataSubnacionalForAnalysis.csv` and `dataSubnacionalForAnalysis_normalized.csv`. The following table provides an example of the structure.
 
+2006 | ... | 2016
+A | B | C
+
+
 2006|...|2016|2017|2018|goal|target|source|countryCode|seriesCode|seriesName|instrumental|reverse|
  --- | --- | --- | --- | --- |--- | --- | --- | --- | --- | --- | --- |
 
