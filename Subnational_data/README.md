@@ -6,17 +6,17 @@ These data were constructed by the [National Laboratory of Public Policy (LNPP)]
 ## Adjustments to official SDG
 We had to make a few adjustments to the [official categories](https://www.un.org/development/desa/disabilities/envision2030.html) of sustainable development goals (SDG) for the subnational case. In some cases, we divided a goal into various to better capture the different aspects of a general goal. This will allow the model to be more precise about which element of the goal requires more attention. On the contrary, due to data limitations, we had to merge several environmental goals into a single large goal. The details of the changes are highlighted in the following list: 
 
-* Goal 8: Decent Work and Economic Growth was *divided into two*: 
+* Goal 8: Decent Work and Economic Growth was **divided into two**: 
 	* Goal 8.1 Economic Growth
 	* Goal 8.2 Decent work
-* Goal 9: Industry, Innovation and Infrastructure was *divided into three*: 
+* Goal 9: Industry, Innovation and Infrastructure was **divided into three**: 
 	* Goal 9.1: Innovation and industry
 	* Goal 9.2: Infrastructure
 	* Goal 9.3: Financial infrastructure
-* Goal 16: Peace and Justice Strong Institutions was *divided into two*:
+* Goal 16: Peace and Justice Strong Institutions was **divided into two**:
 	* Goal 16.1: Peace and Justice
 	* Goal 16.2: Strong Institutions
-* The following goals were *merged into a single goal MA (environment)*: 
+* The following goals were **merged into a single goal MA (environment)**: 
 	* Goal 7: Affordable and Clean Energy
 	* Goal 12: Responsible Consumption and Production
 	* Goal 13: Climate Action
