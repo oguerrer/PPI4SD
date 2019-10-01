@@ -32,17 +32,12 @@ These data cover the period 2006-2018, with each year coded into a column in a t
 We provide two versions of these data: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator (see the technical report for more details on this normalization). The raw version has the original values without normalization. Both datasets can be found in the CSV-formatted files: `dataSubnacionalForAnalysis.csv` and `dataSubnacionalForAnalysis_normalized.csv`. The following table provides an example of the structure.
 
 
-
-
-
 | 2006 | ... | 2016 | 2017 | 2018 | goal | target | source | countryCode | seriesCode | seriesName | instrumental | reverse |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | 13.03 | | 11.26 | | 1 | 1.1 | CONEVAL | CHP | 3 | Porcentaje de poblacion vulnerable por ingresos | 1 | 1 |
-
- 
-|6.79||7.76|1|1.1|CONEVAL|CMX|3|Porcentaje de poblacion vulnerable por ingresos||
-|82.40 | ... ||107.60|||16.1|16.1|ENVIPE|AGU|185|Tasa de robo a negocio||
-|105.86|182.22|||16.1|16.1|ENVIPE|BCN|185|Tasa de robo a negocio||
+| |... | 13.03 | | 11.26 | 1 | 1.1 | CONEVAL | CHP | 3 | Porcentaje de poblacion vulnerable por ingresos | 1 | 1 |
+| |... |6.79 | | 7.76| 1|1.1|CONEVAL|CMX|3|Porcentaje de poblacion vulnerable por ingresos|1|1|
+|82.40 | ...|107.60|||16.1|16.1|ENVIPE|AGU|185|Tasa de robo a negocio|1|1|
+|105.86|...|182.22|||16.1|16.1|ENVIPE|BCN|185|Tasa de robo a negocio|1|1|
 
 Besides the columns representing the years of the observations, there are additional attributes that we explain below:
 
