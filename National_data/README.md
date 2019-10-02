@@ -48,14 +48,14 @@ To facilitate replicability, this repository provides the estimated growth facto
 The development goals in a retrospective analysis are the final values of the development indicators. In a prospective analysis, the goals can be hypothetical values or data obtained from different sources. Below, the reader can find some data sources of hypothetical goals.
 
 ### Goals from the OECD Members
-One way to think about development goals is in terms of a country emulating another. In terms of indicators, this would mean that a country could establish a set of goals based on the indicators of another country it wishes to emulate. In the technical report, we perform this exercise with the indicators of OECD members. File `goals_oecd.csv` contains each OECD country in a column, and provides the value of the indicator employed as goal in each row. The order of the rows corresponds to that of the files `final_sample_normalized.csv` and `final_sample_raw.csv`. Here we provide an example of these data:
+One way to think about development goals is in terms of a country emulating another. In terms of indicators, this would mean that a country could establish a set of goals based on the indicators of another country it wishes to emulate. Often, OECD countries are taken as reference to establish goals. The file `National_data/goals_oecd.csv` contains development indicators for most OECD countries for 2006. By establishing goals through these indicators one assumes that the country in question observes the contemporary indicators of an OECD country and sets its development goals accordingly. Here is an example of these data:
 
-| seriesCode | AUS_ini | AUT_ini | ... | GBR_fin | USA_fin |
+| seriesCode | AUS | AUT | ... | GBR | USA |
 | --- | --- | --- | --- | --- | --- |
 | EOSQ035 | .873 | .871 | ... | .886 | .909 |
 | LEGRGHTIDX | .785 | .736 | ... | .943 | .854 |
 
-These data contains 34 OECD members others than Mexico. When a country's name as the suffix `_ini` it denotes the value of that indicator for that country in the initial period of the sample (2006). In contrast the suffix `_fin` indicates the value in the final period (2016). In addition to the OECD members, we also provide average indicator values (across countries) in the column `OECD_mean` and maximum values (across countries) in `OECD_max`.
+The data contain 34 OECD members others than Mexico. In addition to the OECD members, the data also provide average indicator values (across countries) in the column `OECD_mean` and maximum values (across countries) in `OECD_max`.
 
 ### Governance Parameters
 The parameters capturing the quality of the monitoring mechanisms and of the rule of law are provided in the file `governance_params.csv`. It consists of a vector where the first element corresponds to monitoring and the second to the rule of law. The technical report provides the details on how these data were obtained.
