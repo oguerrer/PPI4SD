@@ -49,7 +49,7 @@ from joblib import Parallel, delayed
 import scipy.optimize as opt
 
 # the model_final.py file should be in the same folder
-from model_final import * 
+from ppi import * 
 
 
 
@@ -233,7 +233,7 @@ def aver_dev(mean_times, steps):
     return aver_error
 
 
-def estimate(I0, T, A, R, phi, tau, vola_emp,
+def estimate(I0, T, A, R, phi, tau,
                steps, parallel_processes=4, sample_size=1000, alphas=None, 
                dev_lim=.8):
     """Estimates the growth factors for a given number of periods to convergence.
@@ -262,9 +262,6 @@ def estimate(I0, T, A, R, phi, tau, vola_emp,
         tau: float, optional 
             Scalar in [0,1] or numpy array (a vector) with values in [0,1] that 
             represent the quality of the rule of law.
-        vola_emp: float
-            The total standard deviation of the changes of the empirical
-            indicators.
         steps: int
             Number of steps to which the simulation should converge. It is used
             to evaluate convergence time errors.
@@ -293,12 +290,15 @@ def estimate(I0, T, A, R, phi, tau, vola_emp,
     else:
         est_alphas = copy.deepcopy(alphas)
     
+    print('Number of ticks to convergence:', steps)
     all_times = run_model(I0, T, A, R, phi, tau, est_alphas, sample_size)
     mean_devs = aver_dev(all_times.mean(axis=1), steps)
     keep_looking = True
+    counter = 1
+    
     while keep_looking:
-        print('Number of ticks to convergence:', steps)
-        print('Mean convergence time error:', mean_devs)
+        print('Running iteration', counter, '...')
+        
         above_std = np.where(np.abs(all_times.mean(axis=1)-steps) > dev_lim)[0]
         sol = Parallel(n_jobs=parallel_processes, verbose=0)(delayed(func)(I0, T, A, R, phi, tau, 
                        node, est_alphas, steps, sample_size) for node in above_std)
@@ -321,7 +321,10 @@ def estimate(I0, T, A, R, phi, tau, vola_emp,
                 chs_sim = ts[:,1:]-ts[:,0:-1]
                 nchs_sim_dist += chs_sim.flatten().tolist()
             est_vola = np.std(nchs_sim_dist)
-                
+        counter += 1    
+            
+        print('Obtained a mean average convergence time error of', mean_devs)
+    
     return est_alphas, est_vola
 
 
@@ -392,7 +395,7 @@ def find_steps(I0, T, A, R, phi, tau, vola_emp, alphas=None,
     while cont_T:
         
         est_alphas, est_vola = estimate(I0=I0, T=T, A=A, R=R, phi=phi, tau=tau,
-                                           vola_emp=vola_emp, steps=steps,
+                                           steps=steps,
                                            parallel_processes=parallel_processes,
                                            sample_size=sample_size, alphas=alphas, 
                                            dev_lim=dev_lim,)
