@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Policy Priority Inference for Sustainable Development
+"""Policy Priority Inference for Sustainable Development - Model Code
 
 Authors: Omar A. Guerrero & Gonzalo Castañeda
 Written in Pyhton 3.7
@@ -14,9 +14,9 @@ in the methodological and technical reports. The accompanying data can be
 obtained from the public repository: https://github.com/oguerrer/PPI4SD. 
 There are two functions in this script:
     
-    run_ppi : the main function that simulates the policymaking process and
+    run_ppi: the main function that simulates the policymaking process and
     generates synthetic development-indicator data.
-    get_targets : a support function to transform a collection of series 
+    get_targets: a support function to transform a collection of series 
     where one or more targets are less or equals to the initial value of the series.
 
 Further information can be found in each function's code.
