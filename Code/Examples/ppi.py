@@ -148,13 +148,13 @@ def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None,
     qs = np.ones(n) # propensities to allocate resources (initially homogeneous)
     pp = np.random.rand(n) # random initial allocation profile
     P = pp/np.sum(pp) # vector of allocations (initially homogeneous)
-    C = np.random.rand(n).astype(np.float128)*P # vector of contributions
+    C = np.random.rand(n)*P # vector of contributions
     F = np.random.rand(n) # vector of benefits
     Ft = np.random.rand(n) # vectors of lagged benefits
     I = copy.deepcopy(I0) # vector of indicators
     It = np.random.rand(N)*I0 # vector of lagged indicators
-    X = np.random.rand(n).astype(np.float128)-.5 # vector of actions
-    Xt = np.random.rand(n).astype(np.float128)-.5 # vector of lagged actions
+    X = np.random.rand(n)-.5 # vector of actions
+    Xt = np.random.rand(n)-.5 # vector of lagged actions
     H = 1 + np.random.rand(n) # vector of historical inefficiencies
     signt = np.sign(np.random.rand(n)-.5) # vector of previous signs for directed learning
     changeFt = np.random.rand(n)-.5 # vector of changes in benefits
