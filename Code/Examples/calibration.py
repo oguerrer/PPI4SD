@@ -19,8 +19,7 @@ The two main functions are:
     estimation: given the number of periods for convergence, this function
                 estimates the growth factors of the model
 
-There are additional support functions that are explained below.
-
+There are additional support functions that are explained below.c
 
 Example
 -------
