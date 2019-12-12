@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Policy Priority Inference for Sustainable Development - Model Code
+"""Policy Priority Inference for Sustainable Development
 
 Authors: Omar A. Guerrero & Gonzalo Castañeda
 Written in Pyhton 3.7
@@ -9,14 +9,14 @@ Acknowledgments: This product was developed through the sponsorship of the
     the Centro de Investigación y Docencia Económica (CIDE, Mexico City), 
     and The Alan Turing Institute (London).
 
-This file contains all the necesary functions to reproduce the analysis presented
+This file contains all the necessary functions to reproduce the analysis presented
 in the methodological and technical reports. The accompanying data can be 
 obtained from the public repository: https://github.com/oguerrer/PPI4SD. 
 There are two functions in this script:
     
-    run_ppi: the main function that simulates the policymaking process and
+    run_ppi : the main function that simulates the policymaking process and
     generates synthetic development-indicator data.
-    get_targets: a support function to transform a collection of series 
+    get_targets : a support function to transform a collection of series 
     where one or more targets are less or equals to the initial value of the series.
 
 Further information can be found in each function's code.
@@ -49,7 +49,7 @@ warnings.simplefilter("ignore")
 
 
 def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None, 
-            gov_func=None, P0=None, H0=None, PF=None, pf=1, tolerance=1e-3):
+            gov_func=None, P0=None, H0=None, PF=None, pf=1, RD=None, tolerance=1e-3):
     """Function to run one simulation of the Policy Priority Inference model.
 
     Parameters
@@ -79,7 +79,7 @@ def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None,
             which are not (value 0). If not provided, it is assumed that all
             nodes are instrumental (a vector of ones).
         gov_func: python function, optional
-            A custom function that that returns the policy priority of the governemnt
+            A custom function that that returns the policy priority of the government
         P0: numpy array, optional
             An array with the initial allocation profile.
         H0: numpy array, optional
@@ -89,6 +89,10 @@ def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None,
         pf: float, optional
             The probability with which the exogenous priorities are followed
             each period. It must be in [0,1].
+        RD: numpy array, optional
+            A vector indicating the level of fiscal rigidity of each instrumental
+            indicator. RD should be provided together with PF, and each element 
+            of RD should be at most as big as the corresponding element in PF.
         tolerance: float, optional
             The precision to consider that an indicator has reached its goal.
             Unless you understand very well how PPI works, this should not be
@@ -168,6 +172,11 @@ def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None,
         P = P0/P0.sum()
     if H0 is not None:
         H = H0
+    
+    if RD is not None and PF is not None:
+        base = PF*RD
+        tot_base = base.sum()
+        P = copy.deepcopy(base) + (1-tot_base)*P
     
     finish = False # a flag to halt the simulation (activates when all indicators reach their targets)
     while not finish: # iterate until the flag indicates otherwise
@@ -253,14 +262,17 @@ def run_ppi(I0, T, A=None, alpha=.1, phi=.5, tau=.5, R=None,
             qs = (gap**(1+hist)) / np.sum(gap**(1+hist))
         
         # check if exogenous priorities are given
-        if PF is None:
+        if PF is None and RD is None:
             P = qs/np.sum(qs) # normalize priorities
-        else:
+        elif PF is not None and RD is None:
             if np.random.rand() < pf:
                 P = PF/np.sum(PF) # use exogenous policy priorities
             else:
                 P = qs/np.sum(qs) # use endogenous policy priorities
-        
+        elif PF is not None and RD is not None:
+            P = copy.deepcopy(base)
+            P = P + (1-tot_base)*qs/np.sum(qs)
+
         # update convergence ticks
         converged = np.abs(T-I) < tolerance
         ticks[~converged] = step
