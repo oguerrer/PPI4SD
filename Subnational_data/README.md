@@ -8,7 +8,7 @@ In contrast with the national data, SDG 16 was not sub-divided.
 ## Development Indicators
 The subnational level data consist of development indicators collected from various sources; generally, from government agencies or from the Mexican Statistical Bureau.
 These data cover the period 2006-2018, with each year coded into a column in a table. However, not all indicators have full coverage.
-Therefore, the report prepared for a sub-national analysis employs a sample of these data.
+Therefore, the report prepared for a subnational analysis employs a sample of these data.
 
 We provide two versions of these data: *normalized* and *raw*.
 In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest levels respectively (see the technical report for more details on this normalization).
@@ -50,18 +50,24 @@ The folder `Subnational_data/networks` contains squared matrices, each one corre
 The rows and columns are ordered in the same fashion as in the files in folders `Subnational_data/samples_normalized` and `Subnational_data/samples_raw`.
 All these networks were constructed following the same procedures as in the national report (see the [`National_data`](https://github.com/oguerrer/PPI4SD/tree/master/National_data) folder of this repository).
 
-
 ## Growth Factors
+To facilitate replicability, this repository provides the estimated growth factors of each state in the folder `Subnational_data/alphas`.
 
+## Governance Parameters
+Due to the recent construction of governance indicators at the subnational level, it was decided to use national-level governance indicators.
+In particular, the parameters capturing the quality of the monitoring mechanisms and of the rule of law are provided in the file `National_data/governance_params.csv`.
+It consists of a vector where the first element corresponds to monitoring and the second to the rule of law.
+The technical report provides the details on how these data were obtained.
 
 ## Development Goals
-
-### Goals from the OECD Members
-
-### Governance Parameters
-
-### Goals from Official Documents
-
-## SDG Budgeting
+In the subnational report, prospective analyses were conducted using development goals that the NLPP and the UNDP-Mexico elicited from states' representatives and from official documents such as state development plans.
+These goals were quantified in terms of growth rates for each of the indicators built by the NLPP.
+In total, five states contributed with such information: Chiapas, Jalisco, the State of Mexico, Nuevo León, and Yucatán.
+The folder `Subational_data/goals` provides the data files, listing the `id` of each indicator and the corresponding growth rate.
+For example, if indicator 32 has a growth rate of 0.23, it means that, according to official documents, the state's aspiration is for indicator 32 to grow in 32% with respect to its baseline level.
 
 ## References
+
+[1] Ospina-Forero, Luis and Castañeda Ramos, Gonzalo and Guerrero, Omar A, Estimating Networks of Sustainable Development Goals (May 9, 2019). Available at SSRN: https://ssrn.com/abstract=3385362 or http://dx.doi.org/10.2139/ssrn.3385362 
+
+[2] Aragam, B., Gu, J., and Zhou, Q. (2017). Learning large-scale Bayesian networks with the sparsebn package. arXiv: 1703.04025.
