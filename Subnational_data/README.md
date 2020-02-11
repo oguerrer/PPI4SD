@@ -8,7 +8,7 @@ In contrast with the national data, SDG 16 was not sub-divided.
 ## Development Indicators
 The subnational level data consist of development indicators collected from various sources; generally, from government agencies or from the Mexican Statistical Bureau.
 These data cover the period 2006-2018, with each year coded into a column in a table. However, not all indicators have full coverage.
-Therefore, the report prepared for a sub-national analysis employs a sample of these data.
+Therefore, the report prepared for a subnational analysis employs a sample of these data.
 
 We provide two versions of these data: *normalized* and *raw*.
 In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest levels respectively (see the technical report for more details on this normalization).
@@ -46,25 +46,28 @@ Besides the columns representing the years of the observations, there are additi
 The networks of interdependencies between development indicators can be estimated by the user through various methods. [Ospina-Forero et al. (2019)](http://dx.doi.org/10.2139/ssrn.3385362) provide a comprehensive survey.
 For this project, the method of Learning Sparse Bayesian Networks from High-Dimensional Data by [Aragam et al. (2017)](https://github.com/itsrainingdata/sparsebn) was employed.
 This repository provides the the network that was estimated for each state.
-The file `National_data/network.csv` contains a squared matrix where each row and each column represents a development indicator.
-The rows and columns are ordered in the same fashion as in the files `National_data/final_sample_normalized.csv` and `National_data/final_sample_raw.csv`.
-
-It should be noted that this network is not causal. Instead, it captures the conditional dependencies between the different development indicators. The direction of such dependencies goes from row to column. For example, if entry [3, 97] has a positive value, it means that the 3rd indicator conditions the change of the 97th indicator in a positive way. In other words, if one observes a change in the 97th indicator, one should expect that a change in the 3rd indicator took place in the same direction. Positive signs in this matrix represent synergies while negative ones correspond to trade-offs. The file `Code/Examples/Example_1_data.ipynb` provides a tutorial to load and visualize these data.
-
-Despite the fact that network edges do not represent causal relationships, it is still important to avoid spurious correlations. This is so because PPI attempts to account for the structural information provided by the network's conditional dependencies in order to infer the distribution of resources. For this reason, an ex-post procedure has been implemented in order to remove false positives. Once the network has been estimated, the project's researchers curated the list of edges by removing links that are not intuitive or have no theoretical reason to be considered conditional dependencies. In addition, the distribution of weights may be heavily skewed. This can be problematic because extremely large weights are not really the reflection of strong conditional dependencies, but rather an artifact of the assumptions underlying the estimation procedure and the data. To correct this issue, a distribution of the magnitudes of the weights was constructed. Then, the 95th percenitile was assigned to those edges whose weights exceeded such value in magnitude (while presercing the original sign).
-
+The folder `Subnational_data/networks` contains squared matrices, each one corresponding to a state network, where each row and each column represents a development indicator.
+The rows and columns are ordered in the same fashion as in the files in folders `Subnational_data/samples_normalized` and `Subnational_data/samples_raw`.
+All these networks were constructed following the same procedures as in the national report (see the [`National_data`](https://github.com/oguerrer/PPI4SD/tree/master/National_data) folder of this repository).
 
 ## Growth Factors
+To facilitate replicability, this repository provides the estimated growth factors of each state in the folder `Subnational_data/alphas`.
 
+## Governance Parameters
+Due to the recent construction of governance indicators at the subnational level, it was decided to use national-level governance indicators.
+In particular, the parameters capturing the quality of the monitoring mechanisms and of the rule of law are provided in the file `National_data/governance_params.csv`.
+It consists of a vector where the first element corresponds to monitoring and the second to the rule of law.
+The technical report provides the details on how these data were obtained.
 
 ## Development Goals
-
-### Goals from the OECD Members
-
-### Governance Parameters
-
-### Goals from Official Documents
-
-## SDG Budgeting
+In the subnational report, prospective analyses were conducted using development goals that the NLPP and the UNDP-Mexico elicited from states' representatives and from official documents such as state development plans.
+These goals were quantified in terms of growth rates for each of the indicators built by the NLPP.
+In total, five states contributed with such information: Chiapas, Jalisco, the State of Mexico, Nuevo León, and Yucatán.
+The folder `Subational_data/goals` provides the data files, listing the `id` of each indicator and the corresponding growth rate.
+For example, if indicator 32 has a growth rate of 0.23, it means that, according to official documents, the state's aspiration is for indicator 32 to grow in 32% with respect to its baseline level.
 
 ## References
+
+[1] Ospina-Forero, Luis and Castañeda Ramos, Gonzalo and Guerrero, Omar A, Estimating Networks of Sustainable Development Goals (May 9, 2019). Available at SSRN: https://ssrn.com/abstract=3385362 or http://dx.doi.org/10.2139/ssrn.3385362 
+
+[2] Aragam, B., Gu, J., and Zhou, Q. (2017). Learning large-scale Bayesian networks with the sparsebn package. arXiv: 1703.04025.
