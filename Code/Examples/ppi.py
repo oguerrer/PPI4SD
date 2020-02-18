@@ -310,7 +310,7 @@ def get_targets(series):
     I0 = series[:,0]
     if np.sum(gaps<0) > 0:
         T = series[:,-1] + np.abs(np.min(gaps)) + max([np.min(gaps[gaps>0]), .01])
-    elif np.min(gap) < .01:
+    elif np.min(gaps) < .01:
         T = series[:,-1] + .01
     else:
         T = series[:,-1]
