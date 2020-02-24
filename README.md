@@ -11,10 +11,8 @@ The following list of activities is a suggestion on *how to get started* with th
 ### Before you start: become familiar with the model
 PPI4SD is an economic model and we therefore strongly encourage you to read the scientific work behind the model before you try to run it on your own. The following two resources should help you understand the model. 
 1. [How do governments determine policy priorities? Studying development strategies through spillover networks](http://www.sciencedirect.com/science/article/pii/S0167268118302026). Gonzalo Castañeda, Florian Chávez-Juárez, Omar A. Guerrero. *Journal of Economic Behavior & Organization*, Volume 154, 2018,Pages 335-361. 
-2. **Inferencia de Prioridades de Política para el Desarrollo Sostenible.  
-Reporte Metodológico** (*Link will be available soon*), Gonzalo Castañeda and Omar A. Guerrero. Methodological paper describing the adaptation of the core model to the Sustainable Development Goals (SDG). In Spanish. 
-4. **Inferencia de Prioridades de Política para el Desarrollo  
-Sostenible: Una Aplicación para el Caso de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a country level analysis for Mexico. Many of the code examples in this repository stem from this study. 
+2. **Inferencia de Prioridades de Política para el Desarrollo Sostenible. Reporte Metodológico** (*Link will be available soon*), Gonzalo Castañeda and Omar A. Guerrero. Methodological paper describing the adaptation of the core model to the Sustainable Development Goals (SDG). In Spanish. 
+4. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: Una Aplicación para el Caso de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a country level analysis for Mexico. Many of the code examples in this repository stem from this study. 
 4. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: El Caso Sub-Nacional de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a sub-national level analysis for Mexico. Many of the code examples in this repository stem from this study. 
 
 ### Running PPI with preloaded data and settings
