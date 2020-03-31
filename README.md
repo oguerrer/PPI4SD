@@ -2,7 +2,7 @@
 
 This is the public repository for the code and data of the project: *Policy Priority Inference for Sustainable Development* (PPI4SD). The project stems from the research program: [*Policy Priority Inference*](https://www.turing.ac.uk/research/research-projects/policy-priority-inference), developed at [The Alan Turing Institute](https://www.turing.ac.uk) by [Omar Guerrero](https://oguerr.com) and [Gonzalo Castañeda](https://www.cide.edu/nosotros/comunidad/profesores/perfil/?id=25). PPI4SD has been sponsored by the [United Nations Development Program for Latin-America and the Caribbean](http://www.latinamerica.undp.org/), and has been developed in collaboration with the Mexican [National Laboratory of Public Policy](https://www.lnpp.mx).
 
-In this repository you will find the necessary data and code to replicate the analysis presented in the different reports produced by PPI4SD. The different pages in this Wiki provide all the necessary references to the official documentation from which the data were constructed. Likewise, here you will find all the code and documentation required to analyze the data through the project's methodology. Should you have any further inquiries please contact Omar Guerrero at oguerrero@turing.ac.uk.
+In this repository you will find the necessary data and code to replicate the analysis presented in the different reports produced by PPI4SD. The different pages in this repository provide all the necessary references to the official documentation from which the data were constructed. Likewise, here you will find all the code and documentation required to analyze the data through the project's methodology. Should you have any further inquiries please contact Omar Guerrero at oguerrero@turing.ac.uk.
 
 
 ## Getting started
@@ -13,7 +13,7 @@ PPI4SD is an economic model, so reading the scientific work behind the model is 
 
 1. [How do governments determine policy priorities? Studying development strategies through spillover networks](http://www.sciencedirect.com/science/article/pii/S0167268118302026). Gonzalo Castañeda, Florian Chávez-Juárez, Omar A. Guerrero. *Journal of Economic Behavior & Organization*, Volume 154, 2018,Pages 335-361. Open-access pre-print available [here](https://arxiv.org/abs/1902.00432). 
 2. **Inferencia de Prioridades de Política para el Desarrollo Sostenible. Reporte Metodológico** (*Link will be available soon*), Gonzalo Castañeda and Omar A. Guerrero. Methodological paper describing the adaptation of the core model to the Sustainable Development Goals (SDG). In Spanish. 
-4. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: Una Aplicación para el Caso de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a country level analysis for Mexico. Many of the code examples in this repository stem from this study. 
+3. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: Una Aplicación para el Caso de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a country level analysis for Mexico. Many of the code examples in this repository stem from this study. 
 4. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: El Caso Sub-Nacional de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a sub-national level analysis for Mexico. Many of the code examples in this repository stem from this study. 
 
 
