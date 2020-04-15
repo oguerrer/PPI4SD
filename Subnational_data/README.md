@@ -1,35 +1,23 @@
 # Subnational Data
 
-These data were constructed by the [National Laboratory of Public Policy (LNPP)](https://www.lnpp.mx) using state level secondary data from various sources . The data includes the period from 2005 to 2018, although most series stop in 2016. 
+These data were constructed by the [National Laboratory of Public Policy (LNPP)](https://www.lnpp.mx) using state level secondary data from various sources.
+The data includes the period from 2005 to 2018, although most series stop in 2016. 
+In contrast with the national data, SDG 16 was not sub-divided.
 
-
-## Adjustments to official SDG
-We had to make a few adjustments to the [official categories](https://www.un.org/development/desa/disabilities/envision2030.html) of sustainable development goals (SDG) for the subnational case. In some cases, we divided a goal into various to better capture the different aspects of a general goal. This will allow the model to be more precise about which element of the goal requires more attention. On the contrary, due to data limitations, we had to merge several environmental goals into a single large goal. The details of the changes are highlighted in the following list: 
-
-* Goal 8: Decent Work and Economic Growth was **divided into two**: 
-	* Goal 8.1 Economic Growth
-	* Goal 8.2 Decent work
-* Goal 9: Industry, Innovation and Infrastructure was **divided into three**: 
-	* Goal 9.1: Innovation and industry
-	* Goal 9.2: Infrastructure
-	* Goal 9.3: Financial infrastructure
-* Goal 16: Peace and Justice Strong Institutions was **divided into two**:
-	* Goal 16.1: Peace and Justice
-	* Goal 16.2: Strong Institutions
-* The following goals were **merged into a single goal MA (environment)**: 
-	* Goal 7: Affordable and Clean Energy
-	* Goal 12: Responsible Consumption and Production
-	* Goal 13: Climate Action
-	* Goal 14: Life Below Water
-	* Goal 15: Life on Land
-	
 
 ## Development Indicators
-The subnational level indicators consist of development indicators collected from various sources, generally from the responsible government agencies or the Mexican Statistical Bureau. 
+The subnational level data consist of development indicators collected from various sources; generally, from government agencies or from the Mexican Statistical Bureau.
+These data cover the period 2006-2018, with each year coded into a column in a table. However, not all indicators have full coverage.
+Therefore, the report prepared for a subnational analysis employs a sample of these data.
 
-These data cover the period 2006-2018, with each year coded into a column in a table. 
-
-We provide two versions of these data: *normalized* and *raw*. In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest values for that indicator (see the technical report for more details on this normalization). The raw version has the original values without normalization. Both datasets can be found in the CSV-formatted files: `dataSubnacionalForAnalysis.csv` and `dataSubnacionalForAnalysis_normalized.csv`. The following table provides an example of the structure.
+We provide two versions of these data: *normalized* and *raw*.
+In the normalized version, the indicators have been mapped into the interval [0,1], where zero and one are the lowest and highest levels respectively (see the technical report for more details on this normalization).
+In addition, the normalized indicators they have been subjected to an *inversion* procedure in order to guarantee that higher levels represent better outcomes.
+The raw version has the original values prior to the normalization procedure.
+Both datasets can be found in the CSV-formatted files: `dataSubnacionalForAnalysis.csv` and `dataSubnacionalForAnalysis_normalized.csv`.
+The following table provides an example of the data structure.
+Since indicator coverage varies slighly between states, we provide state-specific data files in the folders `Subnational_data/samples_normalized` and `Subnational_data/samples_raw`.
+These files are consistent (same number of indicators and same order) with the complementary data on the estimated growth factors and interdependency networks.
 
 
 | 2006 | ... | 2016 | 2017 | 2018 | goal | target | source | countryCode | seriesCode | seriesName | instrumental | reverse |
@@ -39,30 +27,47 @@ We provide two versions of these data: *normalized* and *raw*. In the normalized
 |82.40 | ...|107.60|||16.1|16.1|ENVIPE|AGU|185|Tasa de robo a negocio|1|1|
 |105.86|...|182.22|||16.1|16.1|ENVIPE|BCN|185|Tasa de robo a negocio|1|1|
 
-Note that missing values should be left empty in the csv file. Besides the columns representing the years of the observations, there are additional attributes that we explain below:
+In the raw data, that missing values appear empty left empty.
+In the normalized version, empty cells sorunded by observations (with value to the left and right) have been imputed through linear interpolation.
+Besides the columns representing the years of the observations, there are additional attributes that we explain below:
 
-* `goal`: the SDG to which the indicator belongs 
-* `target`: the target to which the indicator belongs within its SDG. 
-* `source`: the agency from which we obtained the information. 
-* `countryCode`: the 3-digit ISO code of the relevant federal entity (estado).
-* `seriesCode`: an internal code for each data series. Each code is unique.
-* `seriesName`: the description of the indicator as provided by the original data.
-* `instrumental`: a binary variable indicating whether we consider that the topic of the indicator is *instrumental*, *i.e.* that is has specific policy instruments and dedicated resources (see technical report for more details).
-* `reverse`: a binary variable saying if the indicator needs to be reversed so that a higher value represents a better outcome. In the normalized data, all the indicators that required reversion have been reversed. In the raw data this is not the case.
+* `goal`: an unofficial SDG classification developed by the NLPP
+* `target`: the target to which the indicator belongs within its SDG. Targets are defined only for indicators from the United Nations SDG Database and from the World Bank SDG Database.
+* `stateCode`: a 3-character code of the corresponding state.
+* `seriesCode`: the code of the indicator as it appears in its original database. If there was no code assigned by the data supplier, then one was created (e.g. for most indicators in SDG 1).
+* `instrumental`: a binary variable indicating whether the topic of the indicator is *instrumental*, *i.e.* that it has specific policy instruments and dedicated resources (see technical report for more details).
+* `reverse`: a binary variable saying if the indicator needs to be reversed so that a higher value represents a better outcome. In the normalized data, all the indicators the relevant indicators have been reversed. In the raw data this is not the case.
+* `sdg`: the official SDG to which the indicator belongs (1, 2, ..., 16, 17)
+* `seriesNameSpanish`: the description of the indicator in Spanish.
+* `sourceNameSpanish`: the name in Spanish of the organization from which the indicators were obtained.
 
 
-## Network
+## Networks
+The networks of interdependencies between development indicators can be estimated by the user through various methods. [Ospina-Forero et al. (2019)](http://dx.doi.org/10.2139/ssrn.3385362) provide a comprehensive survey.
+For this project, the method of Learning Sparse Bayesian Networks from High-Dimensional Data by [Aragam et al. (2017)](https://github.com/itsrainingdata/sparsebn) was employed.
+This repository provides the the network that was estimated for each state.
+The folder `Subnational_data/networks` contains squared matrices, each one corresponding to a state network, where each row and each column represents a development indicator.
+The rows and columns are ordered in the same fashion as in the files in folders `Subnational_data/samples_normalized` and `Subnational_data/samples_raw`.
+All these networks were constructed following the same procedures as in the national report (see the [`National_data`](https://github.com/oguerrer/PPI4SD/tree/master/National_data) folder of this repository).
 
 ## Growth Factors
+To facilitate replicability, this repository provides the estimated growth factors of each state in the folder `Subnational_data/alphas`.
+
+## Governance Parameters
+Due to the recent construction of governance indicators at the subnational level, it was decided to use national-level governance indicators.
+In particular, the parameters capturing the quality of the monitoring mechanisms and of the rule of law are provided in the file `National_data/governance_params.csv`.
+It consists of a vector where the first element corresponds to monitoring and the second to the rule of law.
+The technical report provides the details on how these data were obtained.
 
 ## Development Goals
-
-### Goals from the OECD Members
-
-### Governance Parameters
-
-### Goals from Official Documents
-
-## SDG Budgeting
+In the subnational report, prospective analyses were conducted using development goals that the NLPP and the UNDP-Mexico elicited from states' representatives and from official documents such as state development plans.
+These goals were quantified in terms of growth rates for each of the indicators built by the NLPP.
+In total, five states contributed with such information: Chiapas, Jalisco, the State of Mexico, Nuevo León, and Yucatán.
+The folder `Subational_data/goals` provides the data files, listing the `id` of each indicator and the corresponding growth rate.
+For example, if indicator 32 has a growth rate of 0.23, it means that, according to official documents, the state's aspiration is for indicator 32 to grow in 32% with respect to its baseline level.
 
 ## References
+
+[1] Ospina-Forero, Luis and Castañeda Ramos, Gonzalo and Guerrero, Omar A, Estimating Networks of Sustainable Development Goals (May 9, 2019). Available at SSRN: https://ssrn.com/abstract=3385362 or http://dx.doi.org/10.2139/ssrn.3385362 
+
+[2] Aragam, B., Gu, J., and Zhou, Q. (2017). Learning large-scale Bayesian networks with the sparsebn package. arXiv: 1703.04025.
