@@ -15,6 +15,7 @@ PPI4SD is an economic model, so reading the scientific work behind the model is 
 2. **Inferencia de Prioridades de Política para el Desarrollo Sostenible. Reporte Metodológico** (*Link will be available soon*), Gonzalo Castañeda and Omar A. Guerrero. Methodological paper describing the adaptation of the core model to the Sustainable Development Goals (SDG). In Spanish. 
 3. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: Una Aplicación para el Caso de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a country level analysis for Mexico. Many of the code examples in this repository stem from this study. 
 4. **Inferencia de Prioridades de Política para el Desarrollo Sostenible: El Caso Sub-Nacional de México** (*Link will be available soon*). Gonzalo Castañeda and Omar A. Guerrero. Document with a sub-national level analysis for Mexico. Many of the code examples in this repository stem from this study. 
+5. [Policy Priority Inference: A Computational Method for the Analysis of Sustainable Development](http://ssrn.com/abstract=3604041). While the reports will be published in Spanish, we have prepared a research paper based on the first two reports.
 
 
 ### Running PPI with preloaded data and settings
